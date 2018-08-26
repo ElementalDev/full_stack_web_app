@@ -1,4 +1,5 @@
 class PostController < Sinatra::Base
+
   # Set the root for the project
   set :root, File.join(File.dirname(__FILE__), "..")
 
@@ -12,7 +13,8 @@ class PostController < Sinatra::Base
 
   # Show the root page
   get "/" do
-    "Welcome to the home page"
+    @title = "Welcome!"
+    erb :"posts/index"
   end
 
   # Show all results
