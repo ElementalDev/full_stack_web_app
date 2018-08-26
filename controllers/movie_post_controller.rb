@@ -6,6 +6,9 @@ class PostController < Sinatra::Base
   # Set where the views are being stored
   set :views, Proc.new { File.join(root, "views") }
 
+  # Path to Static assets
+  set :public_folder, Proc.new { File.join(root, "public") }
+
   # Initialise the sinatra reloader for continuous refresh
   configure :development do
     register Sinatra::Reloader
