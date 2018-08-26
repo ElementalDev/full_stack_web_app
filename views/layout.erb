@@ -1,0 +1,15 @@
+<!-- MASTER LAYOUT -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/css/styles.css">
+    <title><%= @title %></title>
+  </head>
+  <body>
+    <!-- Get the navbar partial -->
+    <%= erb(:"partials/navigation") %>
+    <!-- Print out the template-->
+    <%= yield %>
+  </body>
+</html>
