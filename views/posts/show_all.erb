@@ -1,15 +1,19 @@
 <h1>These are all the movies on the database</h1>
 <!-- For each post -->
-<% @posts.each do |post| %>
-  <!-- Link to its specific page -->
-  <!-- Show its image -->
-  <div>
-    <div>
-      <a href="/movies/<%= post.id %>"><img src="<%= post.img_url %>" alt="Picture not found"></a>
-    </div>
-    <div>
-      <!-- Show a title -->
-      <a href="/movies/<%= post.id %>"><h2><%= post.title %></h2></a>
-    </div>
+<div class="container">
+  <div class="row">
+    <% @posts.each do |post| %>
+      <!-- Link to its specific page -->
+      <!-- Show its image -->
+      <div class="col-sm-3">
+        <a href="/movies/<%= post.id %>">
+          <figure>
+            <img src="<%= post.img_url %>" alt="Picture not found">
+          </figure>
+          <!-- Show a title -->
+          <figcaption><h2><%= post.title %></h2></figcaption>
+        </a>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
