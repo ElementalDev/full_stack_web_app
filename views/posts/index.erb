@@ -6,11 +6,7 @@
     <title><%= @title %></title>
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/movies">Show movies</a>
-      <a href="/movies/new">Add movies</a>
-    </nav>
+    <%= erb(:"partials/navigation") %>
     <h1>Welcome to the movie database home screen</h1>
     <h2>Click 'Show movies' to see what movies we have</h2>
     <h2>-- OR --</h2>
