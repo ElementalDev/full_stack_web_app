@@ -1,5 +1,5 @@
 -- If the table 'movies' exists already, then delete it
-DROP TABLE IF EXISTS movies
+DROP TABLE IF EXISTS movies;
 
 -- Create a table called movies
 CREATE TABLE movies (
@@ -8,7 +8,7 @@ CREATE TABLE movies (
   title VARCHAR(100),
   year_released VARCHAR(4),
   summary TEXT
-)
+);
 
 -- Insert information into movies
 INSERT INTO movies(img_url, title, year_released, summary) VALUES ('https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg', 'The Dark Knight', '2008', 'With the help of allies Lt. Jim Gordon and DA Harvey Dent, Batman has been able to keep a tight lid on crime in Gotham City. But when a vile young criminal calling himself the Joker suddenly throws the town into chaos, the caped Crusader begins to tread a fine line between heroism and vigilantism.');

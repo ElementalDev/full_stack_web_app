@@ -1,5 +1,4 @@
 class PostController < Sinatra::Base
-
   # Set the root for the project
   set :root, File.join(File.dirname(__FILE__), "..")
 
@@ -16,13 +15,19 @@ class PostController < Sinatra::Base
 
   # Show the root page
   get "/" do
+    # Dynamically change the title
     @title = "Welcome!"
+    # Display the correct page using layout and template
     erb :"posts/index"
   end
 
   # Show all results
   get "/movies" do
-    "All movies"
+    @title = "All movies"
+    # Get all posts from the model
+    @posts = Post.all
+    puts @posts
+    erb :"posts/show_all"
   end
 
   # Create a new movie
@@ -52,6 +57,8 @@ class PostController < Sinatra::Base
 
   # Show one movie
   get "/movies/:id" do
-    "One movie"
+    id = params[:id]
+    @post = Post.find(id)
+    erb :"posts/show_one"
   end
 end
