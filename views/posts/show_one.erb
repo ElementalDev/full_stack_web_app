@@ -3,7 +3,7 @@
 <h2><i><%= @post.year_released %></i></h2>
 <p><%= @post.summary %></p>
 <a href="/movies/<%= @post.id %>/edit">Edit</a>
-<form action="/:id" method="post">
+<form action="/<%= @post.id %>" method="post">
   <!-- Send a delete request -->
   <input type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete">

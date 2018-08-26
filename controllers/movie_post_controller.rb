@@ -61,7 +61,7 @@ class PostController < Sinatra::Base
   # Save the editted movie to the model
   put "/:id" do
     id = params[:id].to_i
-    @post = Post.find(id)
+    post = Post.find(id)
     # Assign the values
     post.img_url = params[:img_url]
     post.title = params[:title]
@@ -75,7 +75,9 @@ class PostController < Sinatra::Base
 
   # Delete a specific movie
   delete "/:id" do
-    "Deleted movie from model"
+    id = params[:id].to_i
+    Post.destroy(id)
+    redirect "/movies"
   end
 
   # Show one movie
