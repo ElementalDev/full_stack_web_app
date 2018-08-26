@@ -1,9 +1,10 @@
-class PostController
-
+class PostController < Sinatra::Base
   # Set the root for the project
   set :root, File.join(File.dirname(__FILE__), "..")
+
   # Set where the views are being stored
-  set :views, Proc.new(File.join(root, "views"))
+  set :views, Proc.new { File.join(root, "views") }
+
   # Initialise the sinatra reloader for continuous refresh
   configure :development do
     register Sinatra::Reloader
