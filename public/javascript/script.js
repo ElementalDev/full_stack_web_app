@@ -4,5 +4,4 @@ $(function(){
   var allLink = $("#all_link");
   var addLink = $("#add_link");
 
-  alert();
 })
