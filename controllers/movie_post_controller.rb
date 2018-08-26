@@ -26,30 +26,51 @@ class PostController < Sinatra::Base
     @title = "All movies"
     # Get all posts from the model
     @posts = Post.all
-    puts @posts
     erb :"posts/show_all"
   end
 
   # Create a new movie
   get "/movies/new" do
     @title = "Add a new movie"
+    # Create a new instance of Post
     @post = Post.new
     erb :"posts/new"
   end
 
   # Add new movie to the model
   post "/" do
-    "Added to model"
+    post = Post.new
+    # Assign the values
+    post.img_url = params[:img_url]
+    post.title = params[:title]
+    post.year_released = params[:year_released]
+    post.summary = params[:summary]
+    # Save the values
+    post.save
+    # Redirect back to all movies
+    redirect "/movies"
   end
 
   # Edit an existing movie
   get "/movies/:id/edit" do
-    "Edit an existing movie"
+    id = params[:id].to_i
+    @post = Post.find(id)
+    erb :"posts/edit"
   end
 
   # Save the editted movie to the model
   put "/:id" do
-    "Added edited movie to model"
+    id = params[:id].to_i
+    @post = Post.find(id)
+    # Assign the values
+    post.img_url = params[:img_url]
+    post.title = params[:title]
+    post.year_released = params[:year_released]
+    post.summary = params[:summary]
+    # Save the values
+    post.save
+    # Redirect back to all movies
+    redirect "/movies"
   end
 
   # Delete a specific movie
@@ -59,7 +80,7 @@ class PostController < Sinatra::Base
 
   # Show one movie
   get "/movies/:id" do
-    id = params[:id]
+    id = params[:id].to_i
     @post = Post.find(id)
     erb :"posts/show_one"
   end

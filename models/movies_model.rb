@@ -7,6 +7,15 @@ class Post
   end
 
   def save
+    conn = Post.open_connection
+
+    if (!self.id)
+      sql = "INSERT INTO movies (img_url, title, year_released, summary) VALUES ('#{self.img_url}', '#{self.title}', '#{self.year_released}', '#{self.summary}')"
+    else
+      sql = "UPDATE movies SET img_url = #{self.img_url}, title = #{self.title}, year_released = #{self.year_released}, summary = #{self.summary} WHERE id = #{self.id}"
+    end
+
+    conn.exec(sql)
   end
 
   def self.all

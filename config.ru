@@ -16,10 +16,10 @@ require_relative "./models/movies_model.rb"
 require_relative "./controllers/movie_post_controller.rb"
 
 # Initialise Rack reloader
-Rack::Reloader
+use Rack::Reloader
 
 # Allow rack to catch requests and make sure they do what they need to do
-Rack::MethodOverride
+use Rack::MethodOverride
 
 # Run the correct controller
 run PostController
