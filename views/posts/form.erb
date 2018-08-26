@@ -1,0 +1,22 @@
+<form action="/<%= @post.id %>" method="post">
+  <div>
+    <input type="text" name="title" placeholder="Title...">
+  </div>
+  <div>
+    <input type="text" name="img_url" placeholder="Image URL...">
+  </div>
+  <div>
+    <input type="text" name="year_released" placeholder="Year released...">
+  </div>
+  <div>
+    <textarea name="summary" placeholder="Summary..."></textarea>
+  </div>
+  <div>
+    <input type="submit" value="Add movie">
+  </div>
+  <div>
+    <% if (@post.id) %>
+      <input type="hidden" name="_method" value="PUT">
+    <% end %>
+  </div>
+</form>

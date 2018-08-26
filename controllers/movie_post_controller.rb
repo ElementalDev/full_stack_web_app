@@ -32,7 +32,9 @@ class PostController < Sinatra::Base
 
   # Create a new movie
   get "/movies/new" do
-    "Create a new movie"
+    @title = "Add a new movie"
+    @post = Post.new
+    erb :"posts/new"
   end
 
   # Add new movie to the model
