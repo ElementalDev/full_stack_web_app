@@ -55,7 +55,6 @@ a {
 
 .img_cont {
   margin-top: 20px;
-  height: 400px;
 }
 
 .post_img, .one_post_img {
@@ -163,4 +162,47 @@ textarea {
 
 .sub_btn:hover {
   background-color: #466880;
+}
+
+/* Media Queries */
+/* @media only screen and (max-width: 1000px) {
+  .films {
+    display: block;
+    margin: auto;
+  }
+
+  .img_cont {
+    display: block;
+    margin: auto;
+    width: 400px;
+  }
+
+  .post_img, .one_post_img {
+    width: 100%;
+  }
+
+  .movie_title {
+    font-size: 50px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+  }
+} */
+
+
+@media screen and (max-width: 825px) {
+  .img_cont {
+    display: block;
+    margin: auto;
+    width: 600px;
+  }
+
+  .post_img, .one_post_img {
+    width: 100%;
+  }
+
+  .movie_title {
+    font-size: 50px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+  }
 }
