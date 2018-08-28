@@ -1,0 +1,12 @@
+<div class="form_back">
+  <form action="/<%= @post.id %>" method="post">
+    <input type="text" name="title" placeholder="Title..." value="<%= @post.title %>">
+    <input type="text" name="img_url" placeholder="Image URL..." value="<%= @post.img_url %>">
+    <input type="text" name="year_released" placeholder="Year released..." value="<%= @post.year_released %>">
+    <textarea name="summary" placeholder="Summary..."><%= @post.summary %></textarea>
+    <input class="sub_btn" type="submit" value="Add movie">
+    <% if(@post.id) %>
+        <input type="hidden" name="_method" value="PUT">
+    <% end %>
+  </form>
+</div>

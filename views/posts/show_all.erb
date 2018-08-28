@@ -1,0 +1,17 @@
+<h1 class="page_title">These are all the movies on the database</h1>
+<!-- For each post -->
+<div class="container-fluid films">
+  <% @posts.each do |post| %>
+    <!-- Link to its specific page -->
+    <!-- Show its image -->
+    <div class="col-sm-4 img_cont">
+      <a class="film_link" href="/movies/<%= post.id %>">
+        <figure>
+          <img class="post_img" src="<%= post.img_url %>" alt="Picture not found">
+        </figure>
+        <!-- Show a title -->
+        <figcaption><h2 class="movie_title"><%= post.title %></h2></figcaption>
+      </a>
+    </div>
+  <% end %>
+</div>

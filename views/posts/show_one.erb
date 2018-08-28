@@ -1,0 +1,19 @@
+<h1 class="post_title"><%= @post.title %></h1>
+<div class="row post_cont">
+  <div class="col-sm-6 one_img_cont">
+    <img class="one_post_img" src="<%= @post.img_url %>" alt="Picture not found">
+  </div>
+  <div class="container col-sm-6 btn_cont">
+    <a class="btn one_btns btns" href="/movies">Back</a>
+    <a class="btn one_btns btns" href="/movies/<%= @post.id %>/edit">Edit</a>
+    <form action="/<%= @post.id %>" method="post">
+      <!-- Send a delete request -->
+      <input type="hidden" name="_method" value="DELETE">
+      <input class="btn one_btns" type="submit" value="Delete">
+    </form>
+  </div>
+</div>
+<div class="container-fluid">
+  <h2><i>Released: <%= @post.year_released %></i></h2>
+  <p class="post_sum"><%= @post.summary %></p>
+</div>
